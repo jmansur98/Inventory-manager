@@ -29,11 +29,12 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/contactus", contactRoute);
+
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     app.listen(PORT, async () => {
-      console.log(`server running on port ${PORT} `);
+      console.log(`Servidor escuchando en el puerto http://localhost:${PORT} `);
     });
   })
   .catch((err) => console.log(err));

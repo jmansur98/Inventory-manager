@@ -5,17 +5,11 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { AiOutlineEye } from "react-icons/ai";
 import Search from "../../search/Search";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  FILTER_PRODUCTS,
-  selectFilteredPoducts,
-} from "../../../redux/features/product/filterSlice";
+import {FILTER_PRODUCTS,selectFilteredPoducts,} from "../../../redux/features/product/filterSlice";
 import ReactPaginate from "react-paginate";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
-import {
-  deleteProduct,
-  getProducts,
-} from "../../../redux/features/product/productSlice";
+import {deleteProduct,getProducts,} from "../../../redux/features/product/productSlice";
 import { Link } from "react-router-dom";
 
 const ProductList = ({ products, isLoading }) => {
@@ -83,7 +77,7 @@ const ProductList = ({ products, isLoading }) => {
       <div className="table">
         <div className="--flex-between --flex-dir-column">
           <span>
-            <h3>Inventory Items</h3>
+            <h3>Inventario</h3>
           </span>
           <span>
             <Search
@@ -97,7 +91,7 @@ const ProductList = ({ products, isLoading }) => {
 
         <div className="table">
           {!isLoading && products.length === 0 ? (
-            <p>-- No product found, please add a product...</p>
+            <p>-- No hay artículos, por favor agregue algún producto para abastarse...</p>
           ) : (
             <table>
               <thead>

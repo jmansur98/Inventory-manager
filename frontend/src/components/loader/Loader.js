@@ -1,13 +1,14 @@
 import React from "react";
-import loaderImg from "../../assets/loader.gif";
 import ReactDOM from "react-dom";
+import Lottie from "lottie-react";
+import animationData from "../../assets/Animation - 1723141484950.json"; // Asegúrate de que la ruta es correcta
 import "./Loader.scss";
 
 const Loader = () => {
   return ReactDOM.createPortal(
     <div className="wrapper">
       <div className="loader">
-        <img src={loaderImg} alt="Loading..." />
+        <Lottie animationData={animationData} loop={true} />
       </div>
     </div>,
     document.getElementById("loader")
@@ -17,7 +18,7 @@ const Loader = () => {
 export const SpinnerImg = () => {
   return (
     <div className="--center-all">
-      <img src={loaderImg} alt="Loading..." />
+      <Lottie animationData={animationData} loop={true} />
     </div>
   );
 };
